@@ -9,7 +9,7 @@
 #define STREAM_ERR "ERROR: Problem with input stream"
 #define SIZE_ERR "ERROR: input stream size does not match matrix"
 
-#ifndef MATRIX_H0
+#ifndef MATRIX_H
 #define MATRIX_H
 
 /**
