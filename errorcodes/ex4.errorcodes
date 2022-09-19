@@ -293,12 +293,26 @@ valgrind_penalty_uninitialised_values_13		-2.6		Valgrind detected at least 13 un
 valgrind_penalty_uninitialised_values_14		-2.8		Valgrind detected at least 14 uninitialised values during testing
 valgrind_penalty_uninitialised_values_15		-3				Valgrind detected at least 15 uninitialised values during testing
 
-segmentation_fault_penalty			-10		You had some segmentation faults in your program.
-segmentation_fault_penalty_15		-20		You had many segmentation faults in your program.
+segmentation_fault_penalty_1			-10		You had 1 segmentation faults in your program.
+segmentation_fault_penalty_2			-10.5		You had 2 segmentation faults in your program.
+segmentation_fault_penalty_3			-11		You had 3 segmentation faults in your program.
+segmentation_fault_penalty_4			-11.5		You had 4 segmentation faults in your program.
+segmentation_fault_penalty_5			-12		You had 5 segmentation faults in your program.
+segmentation_fault_penalty_6			-12.5		You had 6 segmentation faults in your program.
+segmentation_fault_penalty_7			-13		You had 7 segmentation faults in your program.
+segmentation_fault_penalty_8			-13.5		You had 8 segmentation faults in your program.
+segmentation_fault_penalty_9			-14		You had 9 segmentation faults in your program.
+segmentation_fault_penalty_10			-14.5		You had 10 segmentation faults in your program.
+segmentation_fault_penalty_11			-15		You had 11 segmentation faults in your program.
+segmentation_fault_penalty_12			-15.5		You had 12 segmentation faults in your program.
+segmentation_fault_penalty_13			-16		You had 13 segmentation faults in your program.
+segmentation_fault_penalty_14			-16.5		You had 14 segmentation faults in your program.
+segmentation_fault_penalty_15			-20		You had 15 segmentation faults in your program.
 
 
 ######################### Coding Style codes #########################
 
+CodingStyleError_clang-diagnostic-error										-0		General Failure during codingStyle Check. May be caused by compilation issues.
 CodingStyleError_readability-identifier-naming								-0		Your code did not follow the naming convention.
 CodingStyleError_readability-non-const-parameter							-0		You had a parameter that could have been pointer to const.
 CodingStyleError_readability-magic-numbers									-0		You may have had magic numbers in your code.
@@ -308,6 +322,14 @@ CodingStyleError_readability-avoid-const-params-in-decls					-0		You have const 
 CodingStyleError_readability-make-member-function-const						-0		You have a member function that could have been marked const.
 CodingStyleError_readability-uppercase-literal-suffix						-0		You have a literal with a lowercase suffix in your code.
 CodingStyleError_readability-simplify-boolean-expr							-0		You have a boolean expression using boolean constants that can be simplified.
+CodingStyleError_readability-function-size -10 You have a function which is longer than 50 lines.
+CodingStyleError_readability-braces-around-statements -0 You have a statement (such as for, if, etc.) without braces.
+CodingStyleError_readability-named-parameter								-0		You have a function with an unnamed parameter.
+CodingStyleError_readability-qualified-auto								-0		You use auto for pointer, consider using pointer sign.
+CodingStyleError_readability-static-accessed-through-instance								-0		You access static method/property through the instance.
+CodingStyleError_readability-const-return-type								-0		You return const value unnecessarily.
+CodingStyleError_clang-diagnostic-gnu-array-member-paren-init								-0		Parenthesized initialization of a member array is a GNU extension 
+
 
 CodingStylePenalty_0		-0		You have 0 codingStyle errors. No points reduced.
 CodingStylePenalty_1		-1		You have 1 codingStyle error.
@@ -320,6 +342,27 @@ CodingStylePenalty_7		-7		You have 7 codingStyle errors.
 CodingStylePenalty_8		-8		You have 8 codingStyle errors.
 CodingStylePenalty_9		-9		You have 9 codingStyle errors.
 CodingStylePenalty_10		-10		You have 10 codingStyle errors.
+
+EarlySubmissionDays_1 +1 Assignment submitted 1 day early
+EarlySubmissionDays_2 +5 Assignment submitted 2 day early
+EarlySubmissionDays_3 +6 Assignment submitted 3 day early
+EarlySubmissionDays_4 +7 Assignment submitted 4 day early
+EarlySubmissionDays_5 +8 Assignment submitted 5 day early
+EarlySubmissionDays_6 +8 Assignment submitted 6 day early
+EarlySubmissionDays_7 +8 Assignment submitted 7 day early
+EarlySubmissionDays_8 +8 Assignment submitted 8 day early
+EarlySubmissionDays_9 +10 Assignment submitted 9 day early
+EarlySubmissionDays_10 +10 Assignment submitted 10 day early
+EarlySubmissionDays_11 +10 Assignment submitted 11 day early
+EarlySubmissionDays_12 +10 Assignment submitted 12 day early
+EarlySubmissionDays_13 +10 Assignment submitted 13 day early
+EarlySubmissionDays_14 +10 Assignment submitted 14 day early
+EarlySubmissionDays_15 +10 Assignment submitted 15 day early
+EarlySubmissionDays_16 +10 Assignment submitted 16 day early
+EarlySubmissionDays_17 +10 Assignment submitted 17 day early
+EarlySubmissionDays_18 +10 Assignment submitted 18 day early
+EarlySubmissionDays_19 +10 Assignment submitted 19 day early
+EarlySubmissionDays_20 +10 Assignment submitted 20 day early
 
 # Other general autotest codes:
 
