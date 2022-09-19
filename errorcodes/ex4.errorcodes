@@ -1,0 +1,328 @@
+# lines that start with # are ignored.
+
+#############################################################################################################
+############################################### Manual Grading ##############################################
+#############################################################################################################
+
+##################
+# Cosmetic coding:
+##################
+class_naming_convention					-0.2                Class name not following style conventions
+funcion_naming_convention				-0.2                Function name not following style conventions
+var_naming_convention					-0.2                Variable name not following style conventions
+function_uninformative_name				-0.2                Function name should be meaningful and informative
+function_missing_documentation			-2                	Function missing heading documentation
+var_uninformative_name					-0.2                Variable name should be meaningful and informative
+unicode									-0.2                unicode in files
+
+
+
+#############
+# General:
+#############
+# For a general comment with no penaly, use this:
+general_comment							-0
+# For miscellaneous cases that are not covered in the other errorcodes, use this:
+general_bad_style                        -2                General bad style remark
+# For extreme case of bad style, where the other errorcodes don't cover enough, use this:
+extremely_bad_style                     -4                Extremely bad style
+inefficient_code                        -2                code was written inefficiently
+general_error                           -10
+const_modifier                          -2                Didn't add const to the right of method declaration
+bad_usage_of_friend                     -5                Unnecessary usage of friend modifier - this could have been a method
+
+
+forbidden_libraries				-30		a forbidden library is used in the code
+global_helpers					-2		Use local variables in helper functions
+very_unreadable_code			-5		The code is excessively unreadable or unclear
+missing_documentation			-5		Missing documentation
+bad_documentation				-3		Poorly documented code
+using_numeric_literals			-2		You are using numeric literals (magic numbers) inside your logical code. You should use constant variables or #define variables instead.
+using_string_literals			-2		You are using string literals your logical code. You should use constant variables or #define variables instead.
+bad_indentation					-0.1	There is bad indentation
+function_too_long				-4		Function is too long. You should break it to sub-functions.
+main_too_long					-5		You should break it to sub-routines.
+argument_not_const				-2		Function parameter should be defined as const, since the function has no intention of modifying its value.
+argument_not_const_main			-0		Main parameters should not be defined as const, since some UNIX APIs (getopt for example) actually do manipulate argv[] or argc
+code_repetition					-5		There is a code repetition. You should extract the common code to some shared function/code (or use one method in the other).
+implementation_not_optimal		-5		The implementation is too complex (run time / memory /...), and it could have been done simply in a less complex manner
+missing_check_if_null			-1		Your code accesses pointers without verifying first that the value of the pointer is not null.
+vla_arrays						-15		Using of arrays with unknown size is forbidden (at least use malloc)
+read_array_instead_of_char		-0.001	It's more efficient to read array of chars instead of char by char.
+
+implemented_algo_doesnt_stand_demanded_runtime		-12.5	The algorithm doensn't run in O(|N|*|L|*|A|).
+bad_naming_of_functions_or_variables				-2		Poorly named function or variable.
+not_using_dynamic_mem_alloc							-10		You should have used dynamic allocation here.
+not_using_strtod_strtol								-3		Not using demanded functions for conversion.
+too_complicated_implementation						-5		Too complicated implementation.
+realloc_too_often									-2		Realloc too often - it should be done in blocks and not every time you add an item
+documented_code_without_purpose						-3		leaving ?garbage? code in submission.
+using_forbidden_func								-3		used forbidden func in implementation
+initialization_list									-2		should have used initialization list
+
+function_should_have_been_friend			-3	the method/function should have been friend function.
+Function_should_not_have_been_friend 		-3 the method/function should not have been friend functoin
+missing_const_for_function					-4	missing const for function (can be reduced maximum 2 times).
+missing_const_for_arg						-4	missing const for argument (can be reduced maximum 3 times).
+missing_reference							-4	missing reference for argument (can be reduced maximum 3 times).
+function_should_have_been_private			-3	function/method should have been private.
+Function_should_have_been_public			-3	function/method should have been public.
+Data_field_should_have_been_private			-3	no need for the data_fied to be public
+No_need_for_a_print							-0.5	redundant print
+Return_value_should_have_been_by_refernce	-3	missing reference at return value
+Too_many_arguments							-4	first argument is this and it contains the left element.
+
+
+#############################################################################################################
+############################################# Automatic Grading #############################################
+#############################################################################################################
+
+# Add autotests errorcodes here:
+
+
+
+Test_1_1    -4  Matrix assignment test failed: Different values
+Test_1_2    -4  Matrix assignment test failed: Does not accept by const reference
+Test_1_3    -4  Matrix assignment test failed: Different dimensions
+
+Test_2_1    -4  Matrix direct indexing failed: Index error
+Test_2_2    -4  Matrix direct indexing failed: Wrong values
+
+Test_3_1    -4  Matrix copy constructor test failed: Bad exit with error
+Test_3_2    -4  Matrix copy constructor test failed: Different values
+Test_3_3    -4  Matrix copy constructor test failed: Different dimensions
+
+Test_4_1    -4  Matrix dot test failed: Bad exit with error
+Test_4_2    -4  Matrix dot test failed: Wrong values
+
+Test_5_1    -4  Matrix multiplication test failed: Bad exit with error
+Test_5_2    -4  Matrix multiplication test failed: Wrong values
+Test_5_3    -4  Matrix multiplication test failed: Wrong dimensions
+
+Test_6_1    -4  Matrix parenthesis test failed: Bad exit with error
+Test_6_2    -4  Matrix parenthesis test failed: Wrong value returned
+
+Test_7_1    -4  Matrix addition test failed: Bad exit with error
+Test_7_2    -4  Matrix addition test failed: Wrong values
+Test_7_3    -4  Matrix addition test failed: += Does not accept by const reference
+
+Test_8_1    -4  Matrix transpose test failed: Bad exit with error
+Test_8_2    -4  Matrix transpose test failed: Wrong values
+Test_8_3    -4  Matrix transpose test failed: Wrong dimensions
+
+Test_9_1    -4  Matrix vectorize test failed: Bad exit with error
+Test_9_2    -4  Matrix vectorize test failed: Wrong dimensions
+Test_9_3    -4  Matrix vectorize test failed: Does not return reference to original matrix
+Test_9_4    -4  Matrix vectorize test failed: Wrong values
+
+Test_10_1    -4  Activation getter test failed
+
+Test_11_1    -4  Activation parenthesis operator "()" test failed - does not accept by const reference
+
+Test_12_1    -4  ReLU operation test failed: Changed positive values
+Test_12_2    -4  ReLU operation test failed: Didn't change negative values
+
+Test_13_1    -4  Softmax operation test failed - values are not in [0,1]
+Test_13_2    -4  Softmax operation test failed - sum doesn't add up to 1
+
+Test_14_1    -4  Dense does not work correctly - "()" operator failed
+Test_14_2    -4  Dense does not work correctly - getBias failed
+Test_14_3    -4  Dense does not work correctly - getWeights failed
+
+Test_15_1    -4  Matrix addition test failed: Wrong values
+
+
+
+
+
+TestPCompilation_1_compile  -4  Matrix addition does not work with const
+TestPCompilation_2_compile  -4  Matrix brackets does not work with const
+TestPCompilation_3_compile  -3  Matrix multiplication does not work with const
+TestPCompilation_4_compile  -3  Matrix "()" operator does not work with const
+TestPCompilation_5_compile  -4  Matrix norm operator does not work with const
+TestPCompilation_6_compile  -4  Matrix getRows or getCols does not work with const
+TestPCompilation_7_compile  -4  Activation "()" operator does not work with const
+TestPCompilation_8_compile  -4  Activation get_activation_type does not work with const
+TestPCompilation_9_compile  -4  Dense getters (or one of them) do not work with const
+
+
+TestComparison_1_diff  -4  Matrix multiplication - did not handle bad dimensions
+TestComparison_2_diff  -3  Matrix parenthesis - did not handle correctly over index limits
+TestComparison_3_diff  -3  Matrix parenthesis - did not handle correctly under index limits
+TestComparison_4_diff  -4  Matrix dot multiplication - did not handle bad dimensions
+TestComparison_5_diff  -4  Matrix addition - did not handle bad dimensions
+TestComparison_6_diff  -4  Matrix creation - did not handle bad dimensions
+
+
+# Various required autotesting errorcodes:
+
+Test_1_valgrind    -0  Matrix assignment test failed: Different values
+Test_2_valgrind    -0  Matrix direct indexing failed: Index error
+Test_3_valgrind    -0  Matrix copy constructor test failed: Bad exit with error
+Test_4_valgrind    -0  Matrix dot test failed: Bad exit with error
+Test_5_valgrind    -0  Matrix multiplication test failed: Bad exit with error
+Test_6_valgrind    -0  Matrix parenthesis test failed: Bad exit with error
+Test_7_valgrind    -0  Matrix addition test failed: Bad exit with error
+Test_8_valgrind    -0  Matrix transpose test failed: Bad exit with error
+Test_9_valgrind    -0  Matrix vectorize test failed: Bad exit with error
+Test_10_valgrind    -0  Activation getter test failed
+Test_11_valgrind    -0  Activation parenthesis operator "()" test failed - does not accept by const reference
+Test_12_valgrind    -0  ReLU operation test failed: Changed positive values
+Test_13_valgrind    -0  Softmax operation test failed - values are not in [0,1]
+Test_14_valgrind    -0  Dense does not work correctly - "()" operator failed
+Test_15_valgrind    -0  Matrix addition test failed: Wrong values
+
+Test_1_segfault    -4  Matrix assignment test failed: Different values
+Test_2_segfault    -4  Matrix direct indexing failed: Index error
+Test_3_segfault    -4  Matrix copy constructor test failed: Bad exit with error
+Test_4_segfault    -4  Matrix dot test failed: Bad exit with error
+Test_5_segfault    -4  Matrix multiplication test failed: Bad exit with error
+Test_6_segfault    -4  Matrix parenthesis test failed: Bad exit with error
+Test_7_segfault    -4  Matrix addition test failed: Bad exit with error
+Test_8_segfault    -4  Matrix transpose test failed: Bad exit with error
+Test_9_segfault    -4  Matrix vectorize test failed: Bad exit with error
+Test_10_segfault    -4  Activation getter test failed
+Test_11_segfault    -4  Activation parenthesis operator "()" test failed - does not accept by const reference
+Test_12_segfault    -4  ReLU operation test failed: Changed positive values
+Test_13_segfault    -4  Softmax operation test failed - values are not in [0,1]
+Test_14_segfault    -4  Dense does not work correctly - "()" operator failed
+Test_15_segfault    -4  Matrix addition test failed: Wrong values
+
+Test_1_timeout    -4  Matrix assignment test failed: Different values
+Test_2_timeout    -4  Matrix direct indexing failed: Index error
+Test_3_timeout    -4  Matrix copy constructor test failed: Bad exit with error
+Test_4_timeout    -4  Matrix dot test failed: Bad exit with error
+Test_5_timeout    -4  Matrix multiplication test failed: Bad exit with error
+Test_6_timeout    -4  Matrix parenthesis test failed: Bad exit with error
+Test_7_timeout    -4  Matrix addition test failed: Bad exit with error
+Test_8_timeout    -4  Matrix transpose test failed: Bad exit with error
+Test_9_timeout    -4  Matrix vectorize test failed: Bad exit with error
+Test_10_timeout    -4  Activation getter test failed
+Test_11_timeout    -4  Activation parenthesis operator "()" test failed - does not accept by const reference
+Test_12_timeout    -4  ReLU operation test failed: Changed positive values
+Test_13_timeout    -4  Softmax operation test failed - values are not in [0,1]
+Test_14_timeout    -4  Dense does not work correctly - "()" operator failed
+Test_15_timeout    -4  Matrix addition test failed: Wrong values
+
+Test_1_compile    -4  Matrix assignment test failed: Different values
+Test_2_compile    -4  Matrix direct indexing failed: Index error
+Test_3_compile    -4  Matrix copy constructor test failed: Bad exit with error
+Test_4_compile    -4  Matrix dot test failed: Bad exit with error
+Test_5_compile    -4  Matrix multiplication test failed: Bad exit with error
+Test_6_compile    -4  Matrix parenthesis test failed: Bad exit with error
+Test_7_compile    -4  Matrix addition test failed: Bad exit with error
+Test_8_compile    -4  Matrix transpose test failed: Bad exit with error
+Test_9_compile    -4  Matrix vectorize test failed: Bad exit with error
+Test_10_compile    -4  Activation getter test failed
+Test_11_compile    -4  Activation parenthesis operator "()" test failed - does not accept by const reference
+Test_12_compile    -4  ReLU operation test failed: Changed positive values
+Test_13_compile    -4  Softmax operation test failed - values are not in [0,1]
+Test_14_compile    -4  Dense does not work correctly - "()" operator failed
+Test_15_compile    -4  Matrix addition test failed: Wrong values
+
+TestComparison_1_valgrind  -0  Matrix multiplication - did not handle bad dimensions
+TestComparison_2_valgrind  -0  Matrix parenthesis - did not handle correctly over index limits
+TestComparison_3_valgrind  -0  Matrix parenthesis - did not handle correctly under index limits
+TestComparison_4_valgrind  -0  Matrix dot multiplication - did not handle bad dimensions
+TestComparison_5_valgrind  -0  Matrix addition - did not handle bad dimensions
+TestComparison_6_valgrind  -0  Matrix creation - did not handle bad dimensions
+
+TestComparison_1_segfault  -4  Matrix multiplication - did not handle bad dimensions
+TestComparison_2_segfault  -3  Matrix parenthesis - did not handle correctly over index limits
+TestComparison_3_segfault  -3  Matrix parenthesis - did not handle correctly under index limits
+TestComparison_4_segfault  -4  Matrix dot multiplication - did not handle bad dimensions
+TestComparison_5_segfault  -4  Matrix addition - did not handle bad dimensions
+TestComparison_6_segfault  -4  Matrix creation - did not handle bad dimensions
+
+TestComparison_1_compile  -4  Matrix multiplication - did not handle bad dimensions
+TestComparison_2_compile  -3  Matrix parenthesis - did not handle correctly over index limits
+TestComparison_3_compile  -3  Matrix parenthesis - did not handle correctly under index limits
+TestComparison_4_compile  -4  Matrix dot multiplication - did not handle bad dimensions
+TestComparison_5_compile  -4  Matrix addition - did not handle bad dimensions
+TestComparison_6_compile  -4  Matrix creation - did not handle bad dimensions
+
+TestComparison_1_timeout  -4  Matrix multiplication - did not handle bad dimensions
+TestComparison_2_timeout  -3  Matrix parenthesis - did not handle correctly over index limits
+TestComparison_3_timeout  -3  Matrix parenthesis - did not handle correctly under index limits
+TestComparison_4_timeout  -4  Matrix dot multiplication - did not handle bad dimensions
+TestComparison_5_timeout  -4  Matrix addition - did not handle bad dimensions
+TestComparison_6_timeout  -4  Matrix creation - did not handle bad dimensions
+
+######################### Valgrind Codes #########################
+
+valgrind_penalty_invalid_read/write_1		-0.5		Valgrind detected at least 1 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_2		-1		Valgrind detected at least 2 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_3		-1.5		Valgrind detected at least 3 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_4		-2		Valgrind detected at least 4 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_5		-2.5		Valgrind detected at least 5 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_6		-3		Valgrind detected at least 6 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_7		-3.5		Valgrind detected at least 7 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_8		-4		Valgrind detected at least 8 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_9		-4.5		Valgrind detected at least 9 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_10		-5		Valgrind detected at least 10 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_11		-5.5		Valgrind detected at least 11 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_12		-6		Valgrind detected at least 12 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_13		-6.5		Valgrind detected at least 13 invalid read/writes during testing
+valgrind_penalty_invalid_read/write_14		-7		Valgrind detected at least 14 invalid read/writes during testing
+
+
+valgrind_penalty_memory_leaks_1		-1		Valgrind detected at least 1 memory leak errors during testing
+valgrind_penalty_memory_leaks_2		-2		Valgrind detected at least 2 memory leak errors during testing
+valgrind_penalty_memory_leaks_3		-3		Valgrind detected at least 3 memory leak errors during testing
+valgrind_penalty_memory_leaks_4		-4		Valgrind detected at least 4 memory leak errors during testing
+valgrind_penalty_memory_leaks_5		-5		Valgrind detected at least 5 memory leak errors during testing
+valgrind_penalty_memory_leaks_6		-6		Valgrind detected at least 6 memory leak errors during testing
+valgrind_penalty_memory_leaks_7		-7		Valgrind detected at least 7 memory leak errors during testing
+valgrind_penalty_memory_leaks_8		-8		Valgrind detected at least 8 memory leak errors during testing
+valgrind_penalty_memory_leaks_9		-9		Valgrind detected at least 9 memory leak errors during testing
+valgrind_penalty_memory_leaks_10	-10		Valgrind detected at least 10 memory leak errors during testing
+
+valgrind_penalty_uninitialised_values_1			-0.2		Valgrind detected at least 1 uninitialised values during testing
+valgrind_penalty_uninitialised_values_2			-0.4		Valgrind detected at least 2 uninitialised values during testing
+valgrind_penalty_uninitialised_values_3			-0.6		Valgrind detected at least 3 uninitialised values during testing
+valgrind_penalty_uninitialised_values_4			-0.8		Valgrind detected at least 4 uninitialised values during testing
+valgrind_penalty_uninitialised_values_5			-1				Valgrind detected at least 5 uninitialised values during testing
+valgrind_penalty_uninitialised_values_6			-1.2		Valgrind detected at least 6 uninitialised values during testing
+valgrind_penalty_uninitialised_values_7			-1.4		Valgrind detected at least 7 uninitialised values during testing
+valgrind_penalty_uninitialised_values_8			-1.6		Valgrind detected at least 8 uninitialised values during testing
+valgrind_penalty_uninitialised_values_9			-1.8		Valgrind detected at least 9 uninitialised values during testing
+valgrind_penalty_uninitialised_values_10		-2				Valgrind detected at least 10 uninitialised values during testing
+valgrind_penalty_uninitialised_values_11		-2.2		Valgrind detected at least 11 uninitialised values during testing
+valgrind_penalty_uninitialised_values_12		-2.4		Valgrind detected at least 12 uninitialised values during testing
+valgrind_penalty_uninitialised_values_13		-2.6		Valgrind detected at least 13 uninitialised values during testing
+valgrind_penalty_uninitialised_values_14		-2.8		Valgrind detected at least 14 uninitialised values during testing
+valgrind_penalty_uninitialised_values_15		-3				Valgrind detected at least 15 uninitialised values during testing
+
+segmentation_fault_penalty			-10		You had some segmentation faults in your program.
+segmentation_fault_penalty_15		-20		You had many segmentation faults in your program.
+
+
+######################### Coding Style codes #########################
+
+CodingStyleError_readability-identifier-naming								-0		Your code did not follow the naming convention.
+CodingStyleError_readability-non-const-parameter							-0		You had a parameter that could have been pointer to const.
+CodingStyleError_readability-magic-numbers									-0		You may have had magic numbers in your code.
+CodingStyleError_readability-redundant-control-flow							-0		You have a redundant 'return' or 'continue' statement.
+CodingStyleError_readability-inconsistent-declaration-parameter-name		-0		You have a function with parameter names that are inconsistent between declaration and definition.
+CodingStyleError_readability-avoid-const-params-in-decls					-0		You have const qualified parameters in function declaration, but this has no effect.
+CodingStyleError_readability-make-member-function-const						-0		You have a member function that could have been marked const.
+CodingStyleError_readability-uppercase-literal-suffix						-0		You have a literal with a lowercase suffix in your code.
+CodingStyleError_readability-simplify-boolean-expr							-0		You have a boolean expression using boolean constants that can be simplified.
+
+CodingStylePenalty_0		-0		You have 0 codingStyle errors. No points reduced.
+CodingStylePenalty_1		-1		You have 1 codingStyle error.
+CodingStylePenalty_2		-3		You have 2 codingStyle errors.
+CodingStylePenalty_3		-3		You have 3 codingStyle errors.
+CodingStylePenalty_4		-4		You have 4 codingStyle errors.
+CodingStylePenalty_5		-5		You have 5 codingStyle errors.
+CodingStylePenalty_6		-6		You have 6 codingStyle errors.
+CodingStylePenalty_7		-7		You have 7 codingStyle errors.
+CodingStylePenalty_8		-8		You have 8 codingStyle errors.
+CodingStylePenalty_9		-9		You have 9 codingStyle errors.
+CodingStylePenalty_10		-10		You have 10 codingStyle errors.
+
+# Other general autotest codes:
+
+TestWerror_compile		-15		Your code compiled with warnings.
+TestPresubmit_compile		-100	Your code did not compile.
+BAD_SUBMISSION			-100	Problem with submission archive.
