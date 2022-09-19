@@ -36,6 +36,11 @@ int main()
 		std::cerr << error.what() << std::endl;
 		return 0;
 	}
+	catch (const std::length_error &error)
+	{
+		std::cerr << error.what() << std::endl;
+		return 0;
+	}
 	catch (const std::exception &error)
 	{
 		std::cerr << "wrong exception" << std::endl;
