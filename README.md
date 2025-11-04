@@ -170,7 +170,7 @@ Exception handling uses standard C++ exceptions:
 ---
 
 ## 🧑‍🏫 Author & Instruction Context
-This project was developed and supervised by **Assaf Gozlan** as part of his teaching duties  
+This project was developed and supervised by **Assaf Gozlan and Idan Alperin** as part of their teaching duties  
 in the *C / C++ Programming Workshop* course at **The Hebrew University of Jerusalem**.  
 The exercise was distributed to students in May 2022 and served as an introduction to  
 practical neural network implementation in native C++.
